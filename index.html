@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <!-- Liên kết với thư viện font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - material icon font
+  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25"
+    />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-top">
+        <div class="banner">
+          <div>Music Player</div>
+        </div>
+        <div class="search">
+          <div id="search">
+            <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
+              <rect class="bar" />
+
+              <g class="magnifier">
+                <circle class="glass" />
+                <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
+              </g>
+
+              <g class="sparks">
+                <circle class="spark" />
+                <circle class="spark" />
+                <circle class="spark" />
+              </g>
+
+              <g class="burst pattern-one">
+                <circle class="particle circle" />
+                <path class="particle triangle" />
+                <circle class="particle circle" />
+                <path class="particle plus" />
+                <rect class="particle rect" />
+                <path class="particle triangle" />
+              </g>
+              <g class="burst pattern-two">
+                <path class="particle plus" />
+                <circle class="particle circle" />
+                <path class="particle triangle" />
+                <rect class="particle rect" />
+                <circle class="particle circle" />
+                <path class="particle plus" />
+              </g>
+              <g class="burst pattern-three">
+                <circle class="particle circle" />
+                <rect class="particle rect" />
+                <path class="particle plus" />
+                <path class="particle triangle" />
+                <rect class="particle rect" />
+                <path class="particle plus" />
+              </g>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              aria-label="Search for inspiration"
+              id="input-search"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container-main">
+        <div class="main">
+          <div class="container-image" id="demo">
+            <img
+              src="./album.png"
+              alt="album"
+              id="album"
+              width="100%"
+              height="100%"
+            />
+            <!-- <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/4tPAY5n40c0?rel=0&enablejsapi=1"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              hidden
+            ></iframe> -->
+          </div>
+          <iframe
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            hidden
+          ></iframe>
+          <div class="description">
+            <div>
+              <h2 id="title">Music</h2>
+            </div>
+          </div>
+          <div class="container-controll">
+            <button id="previous"><i class="fa-solid fa-backward"></i></button>
+            <button id="play-pause">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="next"><i class="fa-solid fa-forward"></i></button>
+          </div>
+        </div>
+        <div class="container-list" id="list">
+          <div>
+            <img src="./album.png" alt="Album" class="album-of-list" />
+            <h2>Description</h2>
+          </div>
+          <div>
+            <img src="./album.png" alt="Album" class="album-of-list" />
+            <h2>Description</h2>
+          </div>
+          <div>
+            <img src="./album.png" alt="Album" class="album-of-list" />
+            <h2>Description</h2>
+          </div>
+          <div>
+            <img src="./album.png" alt="Album" class="album-of-list" />
+            <h2>Description</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
