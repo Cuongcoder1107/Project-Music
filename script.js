@@ -101,6 +101,7 @@ document.getElementById("play-pause").addEventListener("click", () => {
   if (icon.className == "fa-solid fa-play") {
     icon.className = "fa-solid fa-pause";
     controlVideo("playVideo");
+    setInterval(updateVideoTime, 1000);
   } else {
     icon.className = "fa-solid fa-play";
     controlVideo("pauseVideo");
@@ -113,6 +114,7 @@ function controlVideo(vidFunc) {
     "*"
   );
 }
+
 document.getElementById("previous").addEventListener("click", () => {
   let url;
   if (isPlaying == 0) {
@@ -120,6 +122,13 @@ document.getElementById("previous").addEventListener("click", () => {
     return;
   }
   selectMusic(listMusic[isPlaying - 1]);
+});
+document.getElementById("next").addEventListener("click", () => {
+  if (isPlaying == listMusic.length) {
+    selectMusic(listMusic[0]);
+    return;
+  }
+  selectMusic(listMusic[isPlaying + 1]);
 });
 document.getElementById("next").addEventListener("click", () => {
   if (isPlaying == listMusic.length) {
