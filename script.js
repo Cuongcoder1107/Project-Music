@@ -22,7 +22,6 @@ let searchMusic = (keyword) => {
         "?rel=0&enablejsapi=1&autoplay=1";
       document.getElementById("play-pause").childNodes[1].className =
         "fa-solid fa-pause";
-      onYouTubeIframeAPIReady();
       while (dataMusic.length > 0) {
         dataMusic.pop();
       }

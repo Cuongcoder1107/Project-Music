@@ -79,15 +79,6 @@
               width="100%"
               height="100%"
             />
-            <!-- <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/4tPAY5n40c0?rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              hidden
-            ></iframe> -->
           </div>
           <iframe
             id="existing-iframe-example"
@@ -104,7 +95,6 @@
             </div>
           </div>
           <div class="container-controll">
-            <input type="range" min="1" max="100" value="30" id="range" />
             <button id="previous"><i class="fa-solid fa-backward"></i></button>
             <button id="play-pause">
               <i class="fa-solid fa-play"></i>
@@ -132,63 +122,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      var tag = document.createElement("script");
-      tag.id = "iframe-demo";
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName("script")[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player("existing-iframe-example", {
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange,
-          },
-        });
-      }
-      function onPlayerReady(event) {
-        document.getElementById("existing-iframe-example").style.borderColor =
-          "#FF6D00";
-      }
-      function changeBorderColor(playerStatus) {
-        var color;
-        if (playerStatus == -1) {
-          color = "#37474F"; // unstarted = gray
-        } else if (playerStatus == 0) {
-          color = "#FFFF00"; // ended = yellow
-        } else if (playerStatus == 1) {
-          color = "#33691E"; // playing = green
-        } else if (playerStatus == 2) {
-          color = "#DD2C00"; // paused = red
-        } else if (playerStatus == 3) {
-          color = "#AA00FF"; // buffering = purple
-        } else if (playerStatus == 5) {
-          color = "#FF6DOO"; // video cued = orange
-        }
-        if (color) {
-          document.getElementById("existing-iframe-example").style.borderColor =
-            color;
-        }
-      }
-      function onPlayerStateChange(event) {
-        changeBorderColor(event.data);
-        // let currentTime = player.getCurrentTime();
-        // let duration = player.getDuration();
-        // document.getElementById("range").max = duration;
-        // document.getElementById("range").value = currentTime;
-      }
-      setInterval(() => {
-        let currentTime = player.getCurrentTime();
-        let duration = player.getDuration();
-        document.getElementById("range").max = duration;
-        document.getElementById("range").value = currentTime;
-      }, 0);
-      document.getElementById("range").addEventListener("input", () => {
-        player.seekTo(document.getElementById("range").value);
-      });
-    </script>
     <script src="./script.js"></script>
   </body>
 </html>
