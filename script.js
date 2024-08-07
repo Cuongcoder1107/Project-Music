@@ -19,7 +19,7 @@ let searchMusic = (keyword) => {
       iFrame.src =
         "https://www.youtube.com/embed/" +
         data.items[0].id.videoId +
-        "?rel=0&enablejsapi=1&autoplay=1";
+        "?rel=0&enablejsapi=1&autoplay=1&controls=0";
       document.getElementById("play-pause").childNodes[1].className =
         "fa-solid fa-pause";
       while (dataMusic.length > 0) {
@@ -79,7 +79,7 @@ function selectMusic(url) {
       iFrame.src =
         "https://www.youtube.com/embed/" +
         element.id.videoId +
-        "?rel=0&enablejsapi=1&autoplay=1";
+        "?rel=0&enablejsapi=1&autoplay=1&disablekb=0";
       list.childNodes[isPlaying].style.backgroundColor = "#eb94b5";
       list.childNodes[isPlaying].style.border = "5px";
       list.childNodes[isPlaying].style.borderRadius = "10px";
