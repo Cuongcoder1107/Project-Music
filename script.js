@@ -1,8 +1,9 @@
-const API_KEY = "AIzaSyCSDfOsj5biYqHPO_GW7xe3i5Lt5pzPIKk";
+const API_KEY = "AIzaSyDalXye2e18ovwHf7oIv3eL1PSFusRAPZ4";
 let dataMusic = [];
 let listMusic = [];
 let list = document.getElementById("list");
 let isPlaying = 0;
+let count = 0;
 let searchMusic = (keyword) => {
   const searchApi = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${keyword}&key=${API_KEY}`;
   fetch(searchApi)
@@ -10,22 +11,18 @@ let searchMusic = (keyword) => {
       return reponse.json();
     })
     .then((data) => {
-      console.log(data.items[0].snippet.thumbnails.medium.url);
       let avatar = document.getElementById("album");
       avatar.src = data.items[0].snippet.thumbnails.medium.url;
       let title = document.getElementById("title");
-      // document.getElementById("demo").innerHTML = "";
-      // let iframe = document.createElement("iframe");
-      // iframe.src = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
-      // iframe.style.width = 420;
-      // iframe.height = 100;
-      // document.getElementById("demo").appendChild(iframe);
       title.innerHTML = data.items[0].snippet.title;
       let iFrame = document.getElementsByTagName("iframe")[0];
       iFrame.src =
         "https://www.youtube.com/embed/" +
         data.items[0].id.videoId +
-        "?rel=0&enablejsapi=1";
+        "?rel=0&enablejsapi=1&autoplay=1";
+      document.getElementById("play-pause").childNodes[1].className =
+        "fa-solid fa-pause";
+      onYouTubeIframeAPIReady();
       while (dataMusic.length > 0) {
         dataMusic.pop();
       }
@@ -51,8 +48,6 @@ let searchMusic = (keyword) => {
       list.childNodes[isPlaying].style.backgroundColor = "#eb94b5";
       list.childNodes[isPlaying].style.border = "5px";
       list.childNodes[isPlaying].style.borderRadius = "10px";
-      document.getElementById("play-pause").childNodes[1].className =
-        "fa-solid fa-play";
       for (let i = 0; i < list.childNodes.length; i++) {
         list.childNodes[i].addEventListener("click", () => {
           selectMusic(listMusic[i]);
@@ -101,10 +96,11 @@ document.getElementById("play-pause").addEventListener("click", () => {
   if (icon.className == "fa-solid fa-play") {
     icon.className = "fa-solid fa-pause";
     controlVideo("playVideo");
-    setInterval(updateVideoTime, 1000);
+    // player.playVideo();
   } else {
     icon.className = "fa-solid fa-play";
     controlVideo("pauseVideo");
+    // player.pauseVideo();
   }
 });
 function controlVideo(vidFunc) {
@@ -114,21 +110,12 @@ function controlVideo(vidFunc) {
     "*"
   );
 }
-
 document.getElementById("previous").addEventListener("click", () => {
-  let url;
   if (isPlaying == 0) {
     selectMusic(listMusic[listMusic.length - 1]);
     return;
   }
   selectMusic(listMusic[isPlaying - 1]);
-});
-document.getElementById("next").addEventListener("click", () => {
-  if (isPlaying == listMusic.length) {
-    selectMusic(listMusic[0]);
-    return;
-  }
-  selectMusic(listMusic[isPlaying + 1]);
 });
 document.getElementById("next").addEventListener("click", () => {
   if (isPlaying == listMusic.length) {

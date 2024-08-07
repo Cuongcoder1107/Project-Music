@@ -499,3 +499,7 @@ button:active {
   border-color: #9c8e93;
   /* background-color: #bb1475; */
 }
+#range {
+  width: 80%;
+  cursor: pointer;
+}

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
-    <!-- Liên kết với thư viện font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,25 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- 
-    - material icon font
-  -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25"
-    />
-
-    <!-- 
-    - custom css link
-  -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -110,9 +90,12 @@
             ></iframe> -->
           </div>
           <iframe
+            id="existing-iframe-example"
             src=""
             frameborder="0"
             allow="autoplay; encrypted-media"
+            width="960px"
+            height="540px"
             hidden
           ></iframe>
           <div class="description">
@@ -121,6 +104,7 @@
             </div>
           </div>
           <div class="container-controll">
+            <input type="range" min="1" max="100" value="30" id="range" />
             <button id="previous"><i class="fa-solid fa-backward"></i></button>
             <button id="play-pause">
               <i class="fa-solid fa-play"></i>
@@ -148,6 +132,63 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var tag = document.createElement("script");
+      tag.id = "iframe-demo";
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("existing-iframe-example", {
+          events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+          },
+        });
+      }
+      function onPlayerReady(event) {
+        document.getElementById("existing-iframe-example").style.borderColor =
+          "#FF6D00";
+      }
+      function changeBorderColor(playerStatus) {
+        var color;
+        if (playerStatus == -1) {
+          color = "#37474F"; // unstarted = gray
+        } else if (playerStatus == 0) {
+          color = "#FFFF00"; // ended = yellow
+        } else if (playerStatus == 1) {
+          color = "#33691E"; // playing = green
+        } else if (playerStatus == 2) {
+          color = "#DD2C00"; // paused = red
+        } else if (playerStatus == 3) {
+          color = "#AA00FF"; // buffering = purple
+        } else if (playerStatus == 5) {
+          color = "#FF6DOO"; // video cued = orange
+        }
+        if (color) {
+          document.getElementById("existing-iframe-example").style.borderColor =
+            color;
+        }
+      }
+      function onPlayerStateChange(event) {
+        changeBorderColor(event.data);
+        // let currentTime = player.getCurrentTime();
+        // let duration = player.getDuration();
+        // document.getElementById("range").max = duration;
+        // document.getElementById("range").value = currentTime;
+      }
+      setInterval(() => {
+        let currentTime = player.getCurrentTime();
+        let duration = player.getDuration();
+        document.getElementById("range").max = duration;
+        document.getElementById("range").value = currentTime;
+      }, 0);
+      document.getElementById("range").addEventListener("input", () => {
+        player.seekTo(document.getElementById("range").value);
+      });
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
