@@ -11,13 +11,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="container-top">
         <div class="banner">
           <div>Music Player</div>
+        </div>
+        <div class="on-off">
+          <select name="mode" id="mode">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+          </select>
         </div>
         <div class="search">
           <div id="search">
@@ -73,7 +79,7 @@
         <div class="main">
           <div class="container-image" id="demo">
             <img
-              src="./album.png"
+              src="/image/album.png"
               alt="album"
               id="album"
               width="100%"
@@ -106,24 +112,24 @@
         </div>
         <div class="container-list" id="list">
           <div>
-            <img src="./album.png" alt="Album" class="album-of-list" />
+            <img src="/image/album.png" alt="Album" class="album-of-list" />
             <h2>Description</h2>
           </div>
           <div>
-            <img src="./album.png" alt="Album" class="album-of-list" />
+            <img src="/image/album.png" alt="Album" class="album-of-list" />
             <h2>Description</h2>
           </div>
           <div>
-            <img src="./album.png" alt="Album" class="album-of-list" />
+            <img src="/image/album.png" alt="Album" class="album-of-list" />
             <h2>Description</h2>
           </div>
           <div>
-            <img src="./album.png" alt="Album" class="album-of-list" />
+            <img src="/image/album.png" alt="Album" class="album-of-list" />
             <h2>Description</h2>
           </div>
         </div>
       </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="/javascript/script.js"></script>
   </body>
 </html>

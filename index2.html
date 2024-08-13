@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap-header">
+        <div class="wrap-logo">
+          <h1>MUSIC PLAYER</h1>
+        </div>
+        <div class="wrap-mode">
+          <select name="mode" id="mode">
+            <option value="Offline">Offline</option>
+            <option value="Online">Online</option>
+          </select>
+        </div>
+        <div class="search">
+          <input
+            type="text"
+            class="textbox"
+            placeholder="Search"
+            id="input-search"
+          />
+          <button id="button-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+      <div class="wrap-main">
+        <div class="wrap-play">
+          <div class="wrap-avatar">
+            <img src="/image/album.png" alt="avatar" id="avatar" />
+          </div>
+          <div class="wrap-title">
+            <h2 id="title">Description</h2>
+          </div>
+          <div class="wrap-control">
+            <input type="range" id="range" />
+            <button id="backward-step">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button id="play-pause"><i class="fa-solid fa-play"></i></button>
+            <button id="forward-step">
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+          </div>
+        </div>
+        <div class="wrap-library" id="lib">
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" class="avatar-options" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+          <div class="options">
+            <div class="wrap-avatar-options">
+              <img src="/image/album.png" alt="avatar" />
+            </div>
+            <div class="wrap-title-options">
+              <h2>Description</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/javascript/script2.js"></script>
+  </body>
+</html>

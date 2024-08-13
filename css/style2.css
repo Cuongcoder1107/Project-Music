@@ -1,0 +1,218 @@
+.container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  background-image: linear-gradient(to right, red, pink);
+}
+.wrap-header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.wrap-main {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.wrap-play {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: #f5d0de;
+}
+.wrap-library {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  border: 1px solid;
+  border-color: pink;
+  border-radius: 8px;
+}
+.wrap-avatar {
+  width: 90%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap-title {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wrap-control {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.options {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: #f5d0de;
+}
+.options:hover {
+  background-color: #f5d0de;
+}
+.options:active {
+  background-color: #f86fa4;
+}
+.wrap-avatar-options {
+  width: 20%;
+  height: 100%;
+}
+.wrap-title-options {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+}
+.avatar-options {
+  object-fit: contain;
+}
+.wrap-avatar-options img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f5d0de;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+.wrap-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.wrap-title h2 {
+  color: white;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.wrap-control input {
+  width: 90%;
+}
+.wrap-control button {
+  width: 25%;
+  border-radius: 32px;
+  border: solid;
+  background-color: rgb(231, 202, 121);
+  border-color: rgb(231, 202, 121);
+}
+.wrap-control button:hover {
+  opacity: 0.7;
+}
+.wrap-control button:active {
+  opacity: 0.5;
+}
+.wrap-logo {
+  width: 25%;
+  height: 90%;
+}
+.wrap-logo h1 {
+  color: white;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.search {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#input-search {
+  width: 90%;
+  height: 50%;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+  border: 1px solid;
+  border-color: #f5d0de;
+  background-color: #f5d0de;
+  font-size: 150%;
+  color: rgb(19, 6, 8);
+  font-family: "Times New Roman", Times, serif;
+}
+#button-search {
+  width: 10%;
+  height: 55%;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px;
+  border: 1px solid;
+  border-color: #f5d0de;
+  background-color: rgb(240, 171, 171);
+}
+#button-search:hover {
+  opacity: 0.7;
+}
+#button-search:active {
+  background-color: #f5d0de;
+}
+.wrap-mode {
+  width: 25%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mode {
+  width: 80%;
+  height: 50%;
+  background-image: linear-gradient(to right, red, pink);
+  font-size: larger;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  border: 1px solid;
+  border-color: red;
+  border-radius: 10px;
+  text-align: center;
+}
+option {
+  background-color: red;
+}
